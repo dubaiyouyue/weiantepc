@@ -1,0 +1,16 @@
+      <div class="nr">
+      
+        <ul class="list">
+            <volist name="list" id="r"  key="i" empty="暂时没有数据">
+          <li>
+            <div class="news_bg<if condition="$i % 2 ==1">1<else />2</if> fl "><dl class="tacn"><dt class="fs25 fcfff pt5 <if condition="$i % 2 ==1">fca4</if>">{$r.createtime|toDate=###,'d'}</dt><dd class="fcfff" <if condition="$i % 2 ==1"></if>>{$r.createtime|toDate=###,'Y-m'}</dd></dl></div>
+            <div class=" fl h60 w640 ofhd ml10"><dl><dt class="h30 ofhd"><a class="fc000 fs15 lh30" href="{$r.url}">{$r.title}</a></dt><dd><a class="lh30" href="{$r.url}">{$r.description}</a></dd></dl></div>
+          </li>  
+          </volist>
+        </ul>
+        
+        <div class="digg clear">{$pages}</div>
+
+      
+      </div>
+<div style="clear:both;"></div>

@@ -1,0 +1,16 @@
+<div class="centent">
+  <div class="fl w230">
+    <div class="bdlan">
+      <div class="nav_title">{$wencatname}</div>
+      <ul class="subnav">
+        <GZ:subcat id="r" catid="$wenchild">
+        <li id="navs_{$r.id}" class=""><a href="{$r.url}">{$r.catname}</a></li>
+        </GZ:subcat>
+      </ul>
+      <div class="mt10"><img src="../Public/images/nav_pic.jpg" width="228" height="122"></div>
+    </div>
+    <div class="tacn mt15"><a href="{$Categorys[4]['url']}"><img src="../Public/images/case_hot.jpg" width="228" height="103"></a></div>
+    <div class="tacn mt15"><a href="{$Categorys[12]['url']}"><img src="../Public/images/contact_hot.jpg" width="228" height="69"></a></div>
+  </div>
+  <div class="fr w740 bdlan">
+    <div class="title lh40 fs18 fclan"><span class="fr fs12 fca3">{:L(catpos)} <a href="{:URL()}">{:L(home_font)}</a> > <GZ:catpos  catid="catid" space=" > " /></span><span class="fl"><img src="../Public/images/icon.jpg" width="25" height="37"></span>{$catname}</div>

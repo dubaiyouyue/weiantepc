@@ -1,0 +1,62 @@
+
+<script src="__PUBLIC__/Js/jquery.min.js"></script>
+<load href="__PUBLIC__/Js/jquery.validate.js"/>
+      <div class="fr w690 centent">
+      
+                <div class="messages_biaoti">用户留言</div>
+        <div class="messages">
+          <dl>              
+            <volist name="list" id="vo" key="k">
+            <dt>{$vo.username}留言：{$vo.title}</dt>
+            {if  $vo['reply_content']}<dd>客服回复：{$vo['reply_content']}</dd> {/if}                       
+            </volist>
+          </dl>
+        </div>
+        <div id="content_form">
+          <div class="messages_biaoti">发表留言</div>
+          <form name="myform" id="myform" action="{:URL('User-Post/insert')}" method="post">
+
+<div id="content_form">
+<table cellpadding=0 cellspacing=0 class="table_form"  >
+		<input type="hidden"  name="catid" value="{$catid}" />
+		<input type="hidden"  name="moduleid" value="{$moduleid}" />
+		<input type="hidden"  name="lang" value="{$langid}" />
+		<volist name="fields" id="r">
+		<if condition="!empty($r['status']) && $r['ispost']">
+			<tr id="liuyan" height="45px">
+				<td width="100" align="right">{if  $r['required']}<font color="red">*</font>{/if} {if  APP_LANG}{:L($r[field])}{else}{$r.name}{/if}：</td>
+				<td id="box_{$r['field']}">
+				{$r|getform=$form,###}
+				</td>
+			</tr>
+		</if>
+		</volist>
+        <tr>
+				<td width="100">&nbsp;</td>
+				<td>&nbsp;
+		</td>
+				</tr>
+		<tr>
+				<td width="100"></td>
+				<td><input TYPE="reset"  value="清除" class="button" style="border: 1px solid #999999;float: right;margin: 0 5px;text-align: center; width: 50px"><INPUT TYPE="submit"  value="确定" class="button" style="border: 1px solid #999999;float: right;margin: 0 5px;text-align: center; width: 50px" >
+		</td>
+				</tr>
+		</table>
+
+</div>
+</form>
+          
+          
+  
+          
+        </div>
+
+      
+      </div>
+
+
+
+<div style="clear:both;"></div>
+
+
+

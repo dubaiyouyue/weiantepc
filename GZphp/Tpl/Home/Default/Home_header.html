@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="robots" content="index, follow" />
+	<meta name="keywords" content="{$seo_keywords}" />
+	<meta name="description" content="{$seo_description}" />
+	<meta name="Copyright" content="Copyright (c) 2012 resonance.com.cn" />
+	<meta name="author" content="{$site_name}--南宁共振设计_wenzhanwei_Q52009619 & moweilin_Q1647412718">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<title>{$seo_title}-{$site_name}</title>
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link href="__ROOT__/index.php?m=Format&a=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0" />
+<link href="../Public/css/css.css" rel="stylesheet" type="text/css" />
+    <script src="../Public/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="../Public/js/jquery.nav.js" type="text/javascript"></script>
+</head>
+<?php 
+$wennums = 1;
+$wenchildis = 0;
+if($parentid == "0"){
+$wenchild = $catid;
+$wencatname = $catname;
+$wencatdir = $catdir;
+//echo 'parentid-'.$wenchild;
+if(is_array($arrchildid)){
+$wenchildis = "1";
+}else{
+$wenff=explode(",",$arrchildid);
+if(is_array($wenff) && $wenff[1]){
+$wenchildis = "1";
+}
+}
+}else{
+if(is_array($arrparentid)){
+$wenchild = $arrparentid[1];
+$wencatname = $Categorys[$wenchild]['catname'];
+$wencatdir = $Categorys[$wenchild]['catdir'];
+$wenchildis = "1";
+}else{
+$wenf=explode(",",$arrparentid);
+$wenchild = $wenf[1];
+$wencatname = $Categorys[$wenchild]['catname'];
+$wencatdir = $Categorys[$wenchild]['catdir'];
+if($wenchild){	$wenchildis = "1";}
+//echo 'else-'.$wenchild;
+}
+}
+if(empty($wenchild) && empty($modele)){	$wenchild = "98";}
+if($modele == "Guestbook"){	$wenchild = "19";}
+if($modele == "Search"){	$wenchild = "99";}
+switch ($wenchild)
+{
+case 8:
+  $wenbanner1 = '<GZ:banner pos="about" />';
+  break;  //公司简介
+case 1:
+  $wenbanner1 = '<GZ:banner pos="news" />';
+  break; //新闻中心
+case 4:
+  $wenbanner1 = '<GZ:banner pos="product" />';
+  break;  //应用案例
+case 10:
+  $wenbanner1 = '<GZ:banner pos="links" />';
+  break; //友情链接
+case 18:
+  $wenbanner1 = '<GZ:banner pos="join" />';
+  break; //招贤纳士
+case 12:
+  $wenbanner1 = '<GZ:banner pos="contact" />';
+  break; //联系我们
+case 20:
+  $wenbanner1 = '<GZ:banner pos="fuwu" />';
+  break; //经营范围
+default:
+  $wenbanner1 = '<GZ:banner pos="about" />';
+}
+?>
+<body>
+    <div class="sub_banner" style="background:url({$wenbanner1}) no-repeat center;">
+  <div class="centent">
+    <div class="logo"><h1><a href="index.html"><img src="{$logo}" width="193" height="58" title="广西维安特网络技术有限公司" alt="广西维安特网络技术有限公司"></a></h1></div>
+    <div class="button"><a href="{$wen_xinxi_url}"><img src="../Public/images/aniu.png" width="351" height="79"></a></div>
+  </div>
+  
+  <div class="menu" style="top:332px;">
+    <ul>
+      <GZ:nav  catid="0" level="1"  home="1"  />
+    </ul>
+  </div>
+
+</div>

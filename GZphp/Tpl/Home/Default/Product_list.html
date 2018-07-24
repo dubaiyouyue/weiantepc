@@ -1,0 +1,11 @@
+    <div class="nr">
+        <volist name="list" id="r" key="i" empty="暂时没有数据">
+     <div class="case <if condition="$i%3==1"><else />ml5</if>">
+       <div class="bdlan p2"><a href="{$r.url}"><img src="{$r['thumb']|thumb=###,220,175,1}" width="228" height="144"></a></div>
+       <div class="case_txt fs14 tacn lh30"><a href="{$r.url}">{$r.title}</a></div>
+     </div>
+        </volist>
+      <div class="digg clear">{$pages}</div>
+     
+    </div>
+<div style="clear:both;"></div>

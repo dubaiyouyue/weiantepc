@@ -1,0 +1,15 @@
+<div id="centent2_right" class="fll"> 
+        <div id="centent2_right_top">
+        <span class="flr">{:L(catpos)} <a href="{:URL()}">{:L(home_font)}</a> > <GZ:catpos  catid="catid" space=" > " /></span>
+        <h1>{$catname}</h1>
+        
+        </div>
+        <div id="news_list">
+        <ul>
+        <volist name="list" id="r">
+        <li><span class="flr">{$r.createtime|toDate=###,'Y-m-d'}</span><a href="{$r.url}">· {$r.title}</a></li>
+        </volist>
+        </ul>
+        </div>
+        <div class="pagination">{$pages}</div>        
+       </div>
